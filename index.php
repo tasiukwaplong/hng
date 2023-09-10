@@ -4,9 +4,9 @@ $slack_name = isset($_GET['slack_name']) ? htmlspecialchars($_GET['slack_name'])
 $track = isset($_GET['track']) ? htmlspecialchars($_GET['track']) : '';
 
 
-$currentUTC = gmdate('Y-m-d\TH:i:s\Z');
+$currentUTC = gmdate('Y-m-d\TH:i\Z');
 $currentDay = gmdate('l');
-$clientOffsetHours = (int)$_GET['offset'] ?? 0;
+$clientOffsetHours = 0;
 
 // Validate the client's offset is within +/-2 hours
 if ($clientOffsetHours < -2 || $clientOffsetHours > 2) {
